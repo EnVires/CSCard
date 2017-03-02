@@ -1,0 +1,42 @@
+<?php
+
+$user = $Functions->getUser();
+
+if($user->steamid == 76561198230458900){
+    $users = $Functions->db->query("SELECT * FROM users ORDER BY steamid ASC");
+    echo '<h3>Users:</h3>';
+    while($data = $users->fetch_object()){
+        echo $data->steamid.' "'.$data->name.'" '.$data->money.'<br>';
+    }
+    /*echo '<h3>Payments:</h3>';
+    $payments = $Functions->db->query("SELECT * FROM payments ORDER BY id ASC");
+    while($data = $payments->fetch_object()){
+        echo $data->id.'. '.$data->amount.' - '.$data->user.' - '.$data->status.'<br>';
+    }*/
+}
+
+$str = '<div class="items-incase widther"><a class="item-incase uncommon"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957OnHdTRD746JnIWKge66ZezUkjNX7Jwp2rnCpo2t2Qfk8xJpMTqld47DdlI_ZgqCqQLsxbvmgIj84sqMMdFayA/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Солнце в знаке Льва</span></div></a><a class="item-incase uncommon"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FBRw7P7NYjV9-N24q4iOluHtfemJxzkCv5V3ibCToN33igXj_hdqZTv6IIWWdwZoNQzT-1O7xO3tgJai_MOeifog2Vk/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Африканская сетка</span></div></a><a class="item-incase milspec"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FBRw7ODGcDZH09GzkImemrmsY-PUxmgAv5Up2rnFrdmijlXgqUA_ZjzzIIKQcQA7Y1uE_Fbtlefum9bi68KPYhsE/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Змеиная кожа</span></div></a><a class="item-incase restricted"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMSZYcxPSPrRJVfs_ywXpDS4n5YkxUoDv8esAegu8ttSTYLMlZI4dH5TXDPCGNFz-uE8_hvddJpbb9Czrw223bfuxyJYu/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Бог червей</span></div></a><a class="item-incase restricted"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957ODGcDZH_9e_mr-DkvbiKvWFxDhTvMMi3ryWrNyj0Qbi8kQ4Nz3xI9CWJgQ8Nw3Vr1i_wem5hJ-9ot2XnjzZQCBr/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Гадюка</span></div></a><a class="item-incase restricted"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957PfMYTxW08y_mou0mvLwOq7c2DxUscQkiO2S8I-h2gTm-hA4NTyhdoDDcVU3MwzV_1G4xb_uhpPo6Z7XiSw03MaHlHE/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Пиксельный камуфляж «Розовый»</span></div></a><a class="item-incase classified"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMyJYdAXUBKxfY_Qt5DfhDCM7_cotA4Lhr7lSLQ_tt4GVYrl4MY1IGJOGX_fTYF-p6E1u0qJVL5GB8S-9jDOpZDknDIyvzQ/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Кортисейра</span></div></a><a class="item-incase classified"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMTpYcRbXDLBSWco45gn6Bhg-4cBrQJnj8e5fLVnttoWSMbgsZtsfHJLTU6DXMw6o7kJp06BZLJaKqHm-2H_rJC5UDIW53w6s/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Графит</span></div></a><a class="item-incase classified"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMyJYcxPSPqNRXuc7ywXpDS4n5Yk1DIHv9OxRKg7psNeUNbQrNI5ETsjQC6OEZFqru0o61fBbJpDfqC7pw223bdl877LM/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Красная линия</span></div></a><a class="item-incase classified"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKOC5Yeg3UBJ9TWfEz4QWiUXJl6cY2UNLl9e4HcVm-tobFOuIvMNBPF8TRDv6DZ1v84ks91aJae4vJ_n0-dvDrog/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Электрический улей</span></div></a><a class="item-incase classified"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKOC5YcAjDDJ9NVfgq-A3TBCI24dJuGoPlo-JUeQS84NGSMuQvOdBISpKBU6TUMwqruxo50fdcfcaAqHnpj3z3ejBdzQVSDJ4/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>БАХ</span></div></a><a class="item-incase covert"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMTpYfg3FCbRQVfs9ywn7GRg-4cBrQJnloO1XcQXrtYLFZuUsZo0fFsCBDPKDbwD_4k07haheLMfYoi263iu9JC5UDNIZmW0F/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Удар молнии</span></div></a><a class="item-incase covert"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMyJYcxPSPqFNVfg14jfhDCM7_cotUNTkp-gAKF3otIfBOuUoNdBIHMCDX_SCZF_9uR8w0fJUfpyPpC7n3jOpZDl_eS2fcg/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Азимов</span></div></a><a class="item-incase covert"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17P7NdShR7eO3g5C0mvLwOq7c2DkAvJQg27iT9NWm2VK3rkU6YmmiI4SVJAQ9MljUr1O5ku7ug8K1usnXiSw07gvX0uU/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Медуза</span></div></a><a class="item-incase covert"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMyJYcxPSPqhHTPAoywrpCDQm18pmUN6j-vUDeFi-4IbHNrcoNolIGMXRUvXVNwz_4khpgadefZzc9Hjmjny8bzxeRVO1rf9MwH3s/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Скоростной зверь</span></div></a><a class="item-incase covert"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz56I_OKMTpYcxPSPqdSU-cjywXpDS4n5Yk0AIfvr-pVcQ2-toCUZrApY9pJTpHWCKDQMgD070o71aFcLJaA8S_nw223bVCT4Jfk/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>Боец</span></div></a><a class="item-incase covert"><div class="picture"><img src="//steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17P7NdTRH-t26q4SZlvD7PYTQgXtu5cB1g_zMu9zw3g2yrkVtZ2r6IoSVdAU-ZVrY_lS6lb_ogsDqu57NmCQ27iJx53nD30vgUTXWscs/110fx82f" alt="Дроп"></div><div class="descr"><strong>AWP</strong><span>История о драконе</span></div></a></div>';
+
+
+preg_match_all('/\<a class\=\"item-incase (.*?)\"\>(.*?)\<\/a\>/', $str, $matches);
+foreach($matches[0] as $key => $match){
+    $type = $matches[1][$key];
+    preg_match_all('/(alt|title|src)=("[^"]*")/i', $match, $image);
+    $image = str_replace("\"", "", $image[2][0]);
+
+    preg_match('/\<div class\=\"descr\"\>(.*?)\<\/div\>/', $match, $info);
+    $info = explode("</strong><span>", $info[1]);
+
+    $weapon = strip_tags($info[0]);
+    $name = strip_tags($info[1]);
+	
+	$drop = $Functions->db->query("SELECT `id` FROM `items` WHERE name = '".$name."' AND weapon = '".$weapon."'")->fetch_object();
+	if(isset($drop->id)){
+		echo $drop->id.",";
+	}else{
+		$Functions->db->query("INSERT INTO `items`(`weapon`, `name`, `type`, `image`) VALUES ('".$weapon."', '".$name."', '".$type."', '".$image."')");
+		echo $Functions->db->insert_id.",";
+	}
+}
+
+?>
